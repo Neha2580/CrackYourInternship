@@ -13,20 +13,16 @@ public:
             return false;
         }
         
-        ListNode *slow=head;
-         ListNode *fast=head;
+     map<ListNode*,bool> visited;
+        ListNode *temp = head;
         
-        while(fast && fast->next){
-            slow = slow->next;
-            fast = fast->next->next;
-            
-            if(slow==fast){
-                return true;
-            }
-        }
-        
-        
-        return false;
-        
+ while(temp!=NULL){
+        //cycle is present
+        if(visited[temp]==true)
+            return true;
+        visited[temp]=true;
+        temp=temp->next;
     }
+    return false;
+}
 };
