@@ -15,13 +15,14 @@ public:
         if(head==NULL || head->next==NULL){
             return head;
         }
+        ListNode* temp = head;
+        ListNode* smallNode =reverseList(head->next);
         
-        ListNode* smallAns = reverseList(head->next);
-        ListNode* temp = head->next;
-        temp->next  = head;
-        head->next=NULL;
+        head->next->next = temp;
+        temp->next=NULL;
+            
+         return smallNode; 
         
-        return smallAns;
         
     }
 };
