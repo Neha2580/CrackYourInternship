@@ -13,14 +13,23 @@ class Solution{
         
         // Your code here
         
-        int best=arr[0],sum=arr[0];
-        if(n==0)return 0;
+        int curSum = 0;
+        int maxSum = INT_MIN;
         
-        for(int i=1; i<n; i++){
-            sum = max(arr[i],sum+arr[i]);
-            best = max(best,sum);
+        for(int i=0; i<n; i++){
+            
+            curSum += arr[i];
+            
+            if(curSum>maxSum){
+                maxSum = curSum;
+            }
+            
+            if(curSum<0){
+                curSum=0;
+            }
         }
-       return best; 
+        
+        return maxSum;
     }
 };
 
