@@ -38,7 +38,7 @@ pair<long long, long long> getMinMax(long long a[], int n) {
         }
     }
     
-    pair = make_pair(min, max);
+    pair = {min, max};
     return pair;
     
     
