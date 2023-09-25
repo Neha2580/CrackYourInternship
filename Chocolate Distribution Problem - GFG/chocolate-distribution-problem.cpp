@@ -12,9 +12,9 @@ class Solution{
     
     sort(a.begin(), a.end());
     
-    if(n==0 || m==0){
-        return 0;
-    }
+    // if(n==0 || m==0){
+    //     return 0;
+    // }
     
     for(int i=0; i+m-1 <n; i++){
      int  x = a[i+m-1] - a[i];
